@@ -140,7 +140,7 @@ node generate_cv.js
 
 **Silas HAKUZWIMANA**  
 Kigali, Rwanda · University of Rwanda — CST  
-silas.hakuzwimana@ur.ac.rw
+hakusilas@gmail.com || hakuzwimana_223001019@stud.ur.ac.rw
 
 ---
 
