@@ -708,7 +708,8 @@ section {
   background: var(--accent);
   opacity: 0.5;
 }
-.contact-email {
+.contact-email,
+.contact-phone {
   font-family: "Syne", sans-serif;
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 700;
@@ -719,7 +720,8 @@ section {
   text-decoration: none;
   transition: opacity 0.2s;
 }
-.contact-email:hover {
+.contact-email:hover,
+.contact-phone:hover {
   opacity: 0.7;
 }
 
