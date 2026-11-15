@@ -1136,3 +1136,81 @@ footer .footer-logo span {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================
+   CASE STUDY RESPONSIVE FIX
+   ============================================ */
+
+/* 1. Force the active panel to be a single column on mobile */
+@media (max-width: 900px) {
+  .case-panel.active {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* 2. Ensure the overview and metrics take full width */
+  .case-overview,
+  .case-metrics {
+    width: 100%;
+  }
+
+  /* 3. Make the metric rows stack their number and text on mobile */
+  .metric-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-bottom: 16px;
+  }
+
+  .metric-val {
+    font-size: 1.8rem !important;
+    line-height: 1 !important;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+}
+
+/* 4. Extra tightening for very small phones */
+@media (max-width: 540px) {
+  .case-tabs {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+  
+  .case-tab {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* Stack the metric number ABOVE the text on tiny screens */
+  .metric-row {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .metric-val {
+    font-size: 2rem !important;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .metric-info h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  
+  .metric-info p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Ensure text wraps properly */
+  .case-overview p,
+  .case-overview h3 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
