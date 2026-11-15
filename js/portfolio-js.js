@@ -2,13 +2,18 @@
 
 document.getElementById('footerYear').innerText= new Date().getFullYear('Y')
 
-function switchCase(idx) {
-  document
-    .querySelectorAll(".case-tab")
-    .forEach((t, i) => t.classList.toggle("active", i === idx));
-  document
-    .querySelectorAll(".case-panel")
-    .forEach((p, i) => p.classList.toggle("active", i === idx));
+function switchCase(index) {
+  // 1. Remove 'active' class from all tabs and panels
+  const tabs = document.querySelectorAll(".case-tab");
+  const panels = document.querySelectorAll(".case-panel");
+
+  tabs.forEach((tab) => tab.classList.remove("active"));
+  panels.forEach((panel) => panel.classList.remove("active"));
+
+  // 2. Add 'active' class to the clicked tab and its corresponding panel
+  if (tabs[index]) tabs[index].classList.add("active");
+  const targetPanel = document.getElementById(`case-${index}`);
+  if (targetPanel) targetPanel.classList.add("active");
 }
 
 // Subtle scroll fade-in
