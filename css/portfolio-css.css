@@ -1068,3 +1068,29 @@ footer .footer-logo span {
   color: var(--accent2);
   border-bottom-color: var(--accent2);
 }
+
+/* ============================================
+   CASE STUDY TABS — Mobile Scroll Fix
+   ============================================ */
+.case-tabs {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px; /* Gives space for the scrollbar */
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for a cleaner look on Chrome/Safari, but keep functionality */
+.case-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+.case-tabs::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.case-tab {
+  white-space: nowrap; /* Prevents tab text from breaking into two lines */
+  flex-shrink: 0;      /* Prevents tabs from squishing on small screens */
+}
