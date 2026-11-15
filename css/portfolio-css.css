@@ -857,3 +857,214 @@ footer .footer-logo span {
     flex-wrap: wrap;
   }
 }
+
+/* ============================================
+   PROJECT LINKS (GitHub / Live)
+   ============================================ */
+.proj-links {
+  margin-top: 14px;
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.proj-links a {
+  color: var(--accent, #7dd3fc);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.proj-links a:hover {
+  border-bottom-color: var(--accent, #7dd3fc);
+}
+
+.proj-links a:focus-visible {
+  outline: 2px solid var(--accent, #7dd3fc);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   PROJECT CARD REFINEMENTS
+   ============================================ */
+.project-card .proj-impact {
+  margin-bottom: 4px;
+}
+
+/* Slightly more breathing room between meta tags and impact line */
+.project-card .proj-meta {
+  margin-bottom: 14px;
+}
+
+/* Ensure long titles wrap gracefully on narrow screens */
+.project-card .proj-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ============================================
+   CASE STUDY HEADINGS (h3 after hierarchy fix)
+   ============================================ */
+.case-overview h3 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  margin: 12px 0 16px;
+  line-height: 1.2;
+  color: inherit;
+}
+
+/* Preserve spacing rhythm if your h2 rule previously handled this */
+.case-overview h3 + p {
+  margin-top: 0;
+}
+
+/* ============================================
+   HERO STATS — supports "6" and "4" values
+   ============================================ */
+/* Stat numbers like "CCNA" and "360°" need slightly smaller sizing
+   than purely numeric ones — this keeps the row visually balanced. */
+.hero-stats .stat-num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    gap: 20px;
+  }
+  .hero-stats .stat-num {
+    font-size: 1.6rem;
+  }
+  .hero-stats .stat-label {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY UTILITIES
+   ============================================ */
+/* Screen-reader-only class, use as needed */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visible focus rings for keyboard nav on case tabs */
+.case-tab:focus-visible {
+  outline: 2px solid var(--accent, #7dd3fc);
+  outline-offset: 3px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   PROJECT SECTION RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .project-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .project-card .proj-right {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    padding-left: 0;
+  }
+  .proj-role {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 540px) {
+  .project-card {
+    padding: 20px;
+  }
+  .proj-title {
+    font-size: 1.15rem;
+  }
+  .proj-desc {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .proj-meta {
+    gap: 6px;
+  }
+  .proj-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  .proj-impact {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
+
+
+/* ============================================
+   OPTIONAL POLISH
+   ============================================ */
+/* Subtle lift on project cards with live links */
+.project-card:has(.proj-links) {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:has(.proj-links):hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px -12px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 229, 160, 0.08);
+}
+
+/* Respect browsers without :has() — gracefully degrade */
+@supports not (selector(:has(*))) {
+  .project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 32px -12px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(0, 229, 160, 0.08);
+  }
+}
+
+/* ============================================
+   PROJECT LINKS — accent-aware
+   ============================================ */
+.proj-links a:first-child {
+  color: var(--accent);
+}
+
+.proj-links a:not(:first-child) {
+  color: var(--muted);
+}
+
+.proj-links a:not(:first-child):hover {
+  color: var(--accent2);
+  border-bottom-color: var(--accent2);
+}
