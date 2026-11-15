@@ -1214,3 +1214,78 @@ footer .footer-logo span {
     word-wrap: break-word;
   }
 }
+
+/* ============================================
+   MOBILE OVERFLOW & VERTICAL ALIGNMENT FIX
+   ============================================ */
+
+/* 1. Prevent the whole page from scrolling sideways */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  
+  /* 2. Force the active case study to stack vertically */
+  .case-panel.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 32px !important;
+    width: 100% !important;
+  }
+
+  /* 3. Ensure the inner containers don't overflow */
+  .case-overview,
+  .case-metrics {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important; /* Crucial for Flexbox to allow shrinking */
+  }
+
+  /* 4. Stack the metric rows cleanly */
+  .metric-row {
+    display: flex !important;
+    flex-direction: column !important; /* Number on top, text below */
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .metric-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .metric-val {
+    font-size: 2.2rem !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+  }
+
+  .metric-info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  /* 5. Force text and tags to wrap instead of pushing width */
+  .case-overview p,
+  .case-overview h3,
+  .metric-info p {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  
+  /* 6. Specifically target inline elements that might force width */
+  .case-overview span,
+  .case-overview a,
+  .case-overview strong {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
