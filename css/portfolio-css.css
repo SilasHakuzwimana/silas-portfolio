@@ -1070,18 +1070,18 @@ footer .footer-logo span {
 }
 
 /* ============================================
-   CASE STUDY TABS — Mobile Scroll Fix
+   CASE STUDY TABS (6 Tabs & Mobile Scroll Fix)
    ============================================ */
 .case-tabs {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding-bottom: 8px; /* Gives space for the scrollbar */
+  padding-bottom: 8px;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 24px;
 }
 
-/* Hide scrollbar for a cleaner look on Chrome/Safari, but keep functionality */
 .case-tabs::-webkit-scrollbar {
   height: 4px;
 }
@@ -1091,6 +1091,48 @@ footer .footer-logo span {
 }
 
 .case-tab {
-  white-space: nowrap; /* Prevents tab text from breaking into two lines */
-  flex-shrink: 0;      /* Prevents tabs from squishing on small screens */
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.case-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.case-tab.active {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.case-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Panel visibility logic */
+.case-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.case-panel.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
