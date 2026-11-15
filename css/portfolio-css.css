@@ -580,7 +580,7 @@ section {
   background: var(--bg);
 }
 .case-tabs {
-  display: flex;
+  /* display: flex; */
   gap: 4px;
   margin-bottom: 40px;
   background: var(--bg2);
@@ -1287,5 +1287,10 @@ html, body {
   .case-overview strong {
     overflow-wrap: break-word;
     word-wrap: break-word;
+  }
+
+  .case-tabs{
+    position:relative;
+    display: block;
   }
 }
