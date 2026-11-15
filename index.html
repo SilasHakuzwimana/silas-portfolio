@@ -565,6 +565,9 @@
         <button class="case-tab active" role="tab" aria-selected="true" aria-controls="case-0" onclick="switchCase(0)">OTS — Logistics</button>
         <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-1" onclick="switchCase(1)">GS Mareba IMS</button>
         <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-2" onclick="switchCase(2)">Network Audit</button>
+        <button class="case-tab" aria-selected="false" aria-controls="case-3"  onclick="switchCase(3)">Open-Source API</button>
+        <button class="case-tab" aria-selected="false" aria-controls="case-4"  onclick="switchCase(4)">Solertia Platform</button>
+        <button class="case-tab" aria-selected="false" aria-controls="case-5"  onclick="switchCase(5)">WARS — AI Platform</button>
       </div>
 
       <!-- Case 1: OTS -->
@@ -750,6 +753,165 @@
               <p>
                 Single-engagement audit covers infrastructure, backend security,
                 and frontend performance — a unified transformation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- Case 4: Open Source API -->
+      <div class="case-panel" id="case-3">
+        <div class="case-overview">
+          <div class="role-badge">Solo Developer & Maintainer</div>
+          <h3>Rwanda Administrative API — Open-Source Infrastructure</h3>
+          <p>
+            Developers building local applications in Rwanda constantly face the
+            same hurdle: there is no standardized, easily accessible database of
+            the country's administrative hierarchy (from provinces down to
+            villages). Instead of hardcoding this data into a single app, I
+            engineered a reusable, open-source REST API to solve the problem for
+            the entire developer community.
+          </p>
+          <p>
+            Built with Django and Django REST Framework, the system uses a
+            hierarchical relational data model in PostgreSQL. By exposing
+            documented, standard CRUD endpoints at every level, other developers
+            can now integrate Rwandan location data into their apps in minutes
+            rather than days.
+          </p>
+          <div class="quote-block">
+            <p>
+              "Building for other developers requires a higher standard of
+              documentation and schema design. This project proves that clean
+              architecture and clear API design can save an entire ecosystem
+              time."
+            </p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric-row">
+            <div class="metric-val">OS</div>
+            <div class="metric-info">
+              <h5>Open Source Impact</h5>
+              <p>
+                Published publicly on GitHub and actively used by external
+                developers, providing a foundation for Rwandan tech innovation.
+              </p>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">100%</div>
+            <div class="metric-info">
+              <h5>Hierarchical Coverage</h5>
+              <p>
+                Models the complete geographic structure of Rwanda with full
+                relational integrity and optimized queries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 5: Solertia Platform -->
+      <div class="case-panel" id="case-4">
+        <div class="case-overview">
+          <div class="role-badge">Lead Full-Stack Developer</div>
+          <h3>Solertia Novarum — Enterprise Platform & Secure Admin</h3>
+          <p>
+            Solertia required a corporate platform that was more than just a
+            brochure site—they needed a secure operational hub. The challenge was
+            to build a public-facing marketing site seamlessly integrated with a
+            highly secure, role-restricted administrative dashboard.
+          </p>
+          <p>
+            I architected a modern stack using React 19 and TypeScript for the
+            frontend, backed by Node.js and Express. Security was paramount: I
+            implemented JWT + OTP (One-Time Password) authentication for admin
+            access. I also built a custom reporting engine that generates
+            multi-format downloads (PDF, Excel, CSV, Word) directly from the
+            database, allowing management to extract business intelligence
+            effortlessly.
+          </p>
+          <div class="quote-block">
+            <p>
+              "Modern enterprise clients don't just need a website; they need a
+              secure platform that automates their manual workflows. Dockerizing
+              the entire application ensured a seamless, zero-downtime
+              deployment."
+            </p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric-row">
+            <div class="metric-val">2FA</div>
+            <div class="metric-info">
+              <h5>Secure Authentication</h5>
+              <p>
+                Implemented JWT combined with OTP to provide a robust security
+                layer for sensitive administrative data.
+              </p>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">4x</div>
+            <div class="metric-info">
+              <h5>Automated Reporting Formats</h5>
+              <p>
+                Custom backend logic generates instant PDF, Excel, CSV, and Word
+                reports, saving hours of manual data entry.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- Case 6: WARS AI Platform -->
+      <div class="case-panel" id="case-5">
+        <div class="case-overview">
+          <div class="role-badge">Developer & Researcher</div>
+          <h3>WARS — Explainable AI for Water Quality</h3>
+          <p>
+            Water quality prediction models are often "black boxes"—they output a
+            score, but decision-makers don't know <em>why</em> the model made
+            that prediction. For environmental and public health applications,
+            this lack of transparency is a major barrier to adoption.
+          </p>
+          <p>
+            I built a FastAPI microservice that wraps Random Forest and Extra
+            Trees regressor models, exposing them via a clean REST API. The
+            critical differentiator was integrating <strong>SHAP
+            (SHapley Additive exPlanations)</strong>. This allows the API to
+            return not just the prediction, but a feature-by-feature breakdown
+            explaining exactly which water parameters (e.g., pH, turbidity,
+            dissolved oxygen) drove the result.
+          </p>
+          <div class="quote-block">
+            <p>
+              "Machine learning is only useful if humans can trust it. By
+              combining FastAPI with SHAP explainability, I turned a black-box
+              model into an auditable decision-support tool for environmental
+              analysis."
+            </p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric-row">
+            <div class="metric-val">XAI</div>
+            <div class="metric-info">
+              <h5>Explainable AI (SHAP)</h5>
+              <p>
+                Predictions are fully interpretable. Users can see the exact
+                feature weights that contributed to a specific water quality
+                score.
+              </p>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">API</div>
+            <div class="metric-info">
+              <h5>Production-Style Microservice</h5>
+              <p>
+                Built with FastAPI to ensure high performance, asynchronous
+                handling, and automatic OpenAPI documentation for seamless
+                integration.
               </p>
             </div>
           </div>
